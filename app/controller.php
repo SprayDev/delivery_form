@@ -16,10 +16,10 @@ class controller{
     public function render ($viewName, array $params = [])
     {
 
-        $viewFile = ROOTPATH.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.$viewName.'.php';
+        $view = ROOTPATH.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.$viewName.'.php';
         extract($params);
         ob_start();
-        require $viewFile;
+        require $view;
         $body = ob_get_clean();
         ob_end_clean();
         return $this->renderLayout($body);

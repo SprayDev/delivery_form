@@ -42,7 +42,10 @@ $(function() {
                         '  Form has been sent successfully \n' +
                         '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' +
                         '</div>');
-                    e.target.reset()
+                    e.target.reset();
+                    $('input[class~="is-valid"]').each((index, item) => {
+                        $(item).removeClass('is-valid')
+                    })
                 }
             })
         } else {
